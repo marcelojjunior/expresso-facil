@@ -48,17 +48,17 @@ export default function Header() {
                     <Link to='/' className='text-blue-primary text-lg hover:opacity-80'>
                         Home
                     </Link>
-                    <Link to='/' className='text-blue-primary text-lg hover:opacity-80'>
+                    <Link to='/services' className='text-blue-primary text-lg hover:opacity-80'>
                         Serviços
                     </Link>
-                    <Link to='/' className='text-blue-primary text-lg hover:opacity-80'>
+                    <Link to='/faq' className='text-blue-primary text-lg hover:opacity-80'>
                         FAQ
                     </Link>
-                    <Link to='/' className='text-blue-primary text-lg hover:opacity-80'>
+                    <Link to='/contact' className='text-blue-primary text-lg hover:opacity-80'>
                         Contato
                     </Link>
                     <Link
-                        to='/'
+                        to='/tracking'
                         className='text-yellow-primary text-lg bg-blue-primary px-6 py-2 rounded-full hover:opacity-80'
                     >
                         Rastreio
