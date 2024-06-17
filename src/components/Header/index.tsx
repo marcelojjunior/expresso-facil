@@ -7,7 +7,7 @@ import logoExpresso from '../../assets/images/logo.svg';
 
 export default function Header() {
     return (
-        <header className='flex flex-col'>
+        <header className='flex flex-col relative z-10'>
             <div className='w-full bg-blue-primary'>
                 <div className='container mx-auto flex justify-between'>
                     <div className='flex items-center gap-3 py-2'>
@@ -44,18 +44,24 @@ export default function Header() {
                 <Link to='/'>
                     <img src={logoExpresso} alt="Logo" className='' />
                 </Link>
-                <div className='flex items-center gap-8'>
-                    <Link to='/' className='text-blue-primary text-lg'>
+                <div className='flex items-center gap-10'>
+                    <Link to='/' className='text-blue-primary text-lg hover:opacity-80'>
                         Home
                     </Link>
-                    <Link to='/' className='text-blue-primary text-lg'>
+                    <Link to='/' className='text-blue-primary text-lg hover:opacity-80'>
                         Serviços
                     </Link>
-                    <Link to='/' className='text-blue-primary text-lg'>
-                        Rastreio
+                    <Link to='/' className='text-blue-primary text-lg hover:opacity-80'>
+                        FAQ
                     </Link>
-                    <Link to='/' className='text-blue-primary text-lg'>
+                    <Link to='/' className='text-blue-primary text-lg hover:opacity-80'>
                         Contato
+                    </Link>
+                    <Link
+                        to='/'
+                        className='text-yellow-primary text-lg bg-blue-primary px-6 py-2 rounded-full hover:opacity-80'
+                    >
+                        Rastreio
                     </Link>
                 </div>
             </div>
