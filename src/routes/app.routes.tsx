@@ -11,7 +11,7 @@ import DefaultLayout from "../layouts/DefaultLayout";
 export const routes = createBrowserRouter(
     createRoutesFromElements(
         <Route element={<Outlet />}>
-            <Route path="/" element={<DefaultLayout />}>
+            <Route path="/expresso-facil" element={<DefaultLayout />}>
                 <Route index element={<Home />} />
                 <Route path="/tracking" element={<Tracking />} />
                 <Route path="/contact" element={<Contact />} />
