@@ -1,5 +1,0 @@
-export { default as Home } from '../pages/Home'
-export { default as Tracking } from '../pages/Tracking'
-export { default as Contact } from '../pages/Contact'
-export { default as Services } from '../pages/Services'
-export { default as Faq } from '../pages/Faq'
