@@ -1,5 +1,4 @@
 import { api } from "@/service/axios";
-import axios from "axios";
 import { create } from "zustand";
 
 interface useCorreiosProps {
@@ -19,7 +18,7 @@ export const useCorreios = create<useCorreiosProps>((set) => ({
     },
     getTracking: async (code: string) => {
         try {
-            const response = await api.get(`/srorastro/v1/objetos/${code}?resultado=T`);
+            const response = await api.get(`/api/tracking?code=${code}`);
             const data = response.data;
             set({ tracking: data });
         } catch (error) {
