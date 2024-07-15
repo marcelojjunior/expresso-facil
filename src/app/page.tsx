@@ -1,26 +1,22 @@
 'use client';
 
+import TrackingCard from "@/components/TrackingCard";
 import { useCorreios } from "@/hook/useCorreios";
+import { useEffect } from "react";
 
 export default function Home() {
   const { getToken, tracking, token } = useCorreios();
 
-  function handleGetToken() {
-    getToken();
-  }
+  useEffect(() => {
+    const daNow = new Date();
+    if (token!.expiraEm < daNow.toISOString()) {
+      getToken();
+    }
+  }, [])
 
   return (
     <div className="container mx-auto">
-      <button
-        onClick={handleGetToken}
-        className="text-white"
-      >
-        Get token
-      </button>
-
-      <div className="text-white">
-        {JSON.stringify(token?.token)}
-      </div>
+      <TrackingCard />
     </div>
   );
 }
