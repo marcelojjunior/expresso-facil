@@ -6,13 +6,13 @@ export default async function handler(
   res: NextApiResponse
 ) {
   try {
-    const { code } = req.query;
+    const { code, token } = req.query;
 
     const response = await axios.get(
       `https://api.correios.com.br/srorastro/v1/objetos/${code}?resultado=T`,
       {
         headers: {
-          Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
+          Authorization: `Bearer ${token}`,
         },
       }
     );
