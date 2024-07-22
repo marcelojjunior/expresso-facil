@@ -17,7 +17,7 @@ export default function Header() {
                     <span className='text-gray-primary text-lg hover:opacity-80'>
                         FAQ
                     </span>
-                    <Link href={'/tracking'} className='text-gray-primary text-lg hover:opacity-80'>
+                    <Link href={'tracking'} className='text-gray-primary text-lg hover:opacity-80'>
                         Rastreio
                     </Link>
                     <Link href={'/'}

@@ -33,7 +33,7 @@ export default function TrackingCard() {
             />
             <Button
                 onClick={() => {
-                    router.push(`/tracking/?code=${code}`)
+                    router.push(`tracking/?code=${code}`)
                 }}
             >
                 Rastrear

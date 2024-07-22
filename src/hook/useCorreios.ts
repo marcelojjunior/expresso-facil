@@ -69,6 +69,7 @@ interface CorreiosProps {
   token: TokenProps | null;
   tracking: TrackingProps;
   cep: string;
+  setTracking: (tracking: TrackingProps) => void;
   getToken: () => void;
   getTracking: (code: string, token: string) => void;
   getCep: (code: string) => void;
@@ -85,6 +86,7 @@ export const useCorreios = create(
         versao: "",
       },
       cep: "",
+      setTracking: (tracking) => set({ tracking }),
       getToken: async () => {
         try {
           const response = await api.post("/api/generate-token");
@@ -106,6 +108,7 @@ export const useCorreios = create(
           const response = await api.get(`/api/tracking?code=${code}&token=${token}`);
           const data = response.data;
           set({ tracking: data });
+          return data;
         } catch (error) {
           console.error("Error fetching tracking data:", error);
         }
