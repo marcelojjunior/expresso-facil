@@ -17,7 +17,7 @@
 }
 
 body {
-  @apply bg-dark-primary;
+  @apply bg-slate-50;
 }
 
 @layer utilities {

@@ -13,7 +13,7 @@ const config: Config = {
           primary: "#040A2F",
         },
         yellow: {
-          primary: "#FFCF01",
+          primary: "#FFB400",
         },
         dark: {
           primary: "#101920",
