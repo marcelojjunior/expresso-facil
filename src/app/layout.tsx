@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Lato } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 
-const outfit = Outfit({ subsets: ["latin"] });
+const lato = Lato({ subsets: ["latin"], weight: ["100", "300", "400", "700", "900"] });
 
 export const metadata: Metadata = {
   title: "Expresso Fácil",
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className={outfit.className}>
+      <body className={lato.className}>
         <Header />
         {children}
       </body>

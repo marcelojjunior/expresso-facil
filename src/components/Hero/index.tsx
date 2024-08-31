@@ -1,33 +1,25 @@
 import Lottie from "lottie-react";
-import lottieAnimatio from "@/assets/lottie/lottie-animation.json";
-import TrackingCard from "../TrackingCard";
+import lottieAnimation from "@/assets/lottie/animation-shipping.json";
 
 export default function Hero() {
   return (
-    <div className="bg-blue-primary">
-      <div className="container mx-auto pt-10">
-        <div className="grid grid-cols-2 gap-6">
-          <div className="w-full">
-            <div className="w-[90%]">
-              <Lottie animationData={lottieAnimatio} loop />
-            </div>
-          </div>
+    <div className="w-full bg-yellow-primary">
+      <div className="container mx-auto px-4 max-lg:pt-4 max-lg:pb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="flex flex-col justify-center gap-5">
-            <div className="flex gap-2 items-center justify-end">
-              <div className="h-[2px] w-4 bg-yellow-primary" />
-              <span className="text-base font-medium text-slate-50">
-                Facilitando Suas Encomendas Diárias
-              </span>
-            </div>
             <h1
-              className="text-5xl font-bold text-end text-slate-50 flex flex-col gap-4"
+              className="text-5xl lg:text-7xl font-bold text-blue-primary max-lg:max-w-lg flex flex-col gap-4"
             >
-              Expresso Fácil
-              <span>
-                Seu Parceiro de Entregas
-              </span>
+              Hassle free Shipping and Logistics
             </h1>
-            {/* <TrackingCard /> */}
+            <p className="text-base text-blue-primary max-w-lg lg:max-w-md">
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.
+            </p>
+          </div>
+          <div className="w-full max-lg:hidden">
+            <div className="w-[90%]">
+              <Lottie animationData={lottieAnimation} loop />
+            </div>
           </div>
         </div>
       </div>
