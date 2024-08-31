@@ -28,31 +28,20 @@ export default function Header() {
 
     return (
         <header className='flex flex-col bg-yellow-primary'>
-            <nav className='container mx-auto flex items-center justify-between py-2 px-4'>
+            <nav className='container mx-auto flex items-center justify-between py-2 px-4 relative'>
                 <Link href={'/'}>
                     <Image src={logoExpresso} alt="Logo" className='w-20' />
                 </Link>
-                <ul className='hidden lg:flex items-center gap-10 '>
+                <ul className='hidden lg:flex items-center gap-10'>
                     <li className='text-blue-primary font-medium text-lg hover:opacity-80'>
                         Serviços
                     </li>
                     <li className='text-blue-primary font-medium text-lg hover:opacity-80'>
-                        Sobre Nós
-                    </li>
-                    <li className='text-blue-primary font-medium text-lg hover:opacity-80'>
-                        FAQ
+                        Perguntas Frequentes
                     </li>
                     <li className='text-blue-primary font-medium text-lg hover:opacity-80'>
                         Contato
                     </li>
-                    <Link href={'tracking'} className='text-blue-primary font-medium text-lg hover:opacity-80'>
-                        Rastreio
-                    </Link>
-                    {/* <Link href={'/'}
-                        className='text-black-primary font-medium text-lg bg-yellow-primary px-6 py-2 rounded-full hover:opacity-80'
-                    >
-                        Contato
-                    </Link> */}
                 </ul>
                 <div className='lg:hidden'>
                     <Drawer.Root
@@ -96,17 +85,11 @@ export default function Header() {
                                             Serviços
                                         </li>
                                         <li className='text-blue-primary font-medium text-lg hover:opacity-80'>
-                                            Sobre Nós
-                                        </li>
-                                        <li className='text-blue-primary font-medium text-lg hover:opacity-80'>
-                                            FAQ
+                                            Perguntas Frequentes
                                         </li>
                                         <li className='text-blue-primary font-medium text-lg hover:opacity-80'>
                                             Contato
                                         </li>
-                                        <Link href={'tracking'} className='text-blue-primary font-medium text-lg hover:opacity-80'>
-                                            Rastreio
-                                        </Link>
                                     </ul>
                                 </nav>
                             </Drawer.Content>
