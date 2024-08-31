@@ -14,7 +14,7 @@ export default function Button({
             {...props}
             className={twMerge(
                 'px-4 h-11 text-base text-dark-primary bg-yellow-primary font-bold',
-                'hover:opacity-90 transition-all duration-300 active:scale-[0.98]',
+                'hover:bg-blue-primary hover:text-white transition-all duration-300 active:scale-[0.98]',
                 className
             )}
         >
