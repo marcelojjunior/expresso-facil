@@ -13,8 +13,8 @@ import { LuPackageCheck } from "react-icons/lu";
 
 export default function Tracking() {
   const { tracking, getTracking, token, setTracking } = useCorreios();
-  const searchParams = useSearchParams();
-  const code = searchParams?.get("code");
+  // const searchParams = useSearchParams();
+  // const code = searchParams?.get("code");
 
   // const codeExample = "NM275679471BR";
 
@@ -22,18 +22,18 @@ export default function Tracking() {
     getTracking(code, token?.token || "");
   }
 
-  useEffect(() => {
-    if (code) {
-      handleGetTracking(code as string);
-    } else {
-      setTracking({
-        objetos: [],
-        quantidade: 0,
-        tipoResultado: "",
-        versao: "",
-      });
-    }
-  }, [code])
+  // useEffect(() => {
+  //   if (code) {
+  //     handleGetTracking(code as string);
+  //   } else {
+  //     setTracking({
+  //       objetos: [],
+  //       quantidade: 0,
+  //       tipoResultado: "",
+  //       versao: "",
+  //     });
+  //   }
+  // }, [code])
 
   // console.log(tracking)
 
