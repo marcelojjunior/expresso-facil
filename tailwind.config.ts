@@ -24,6 +24,7 @@ const config: Config = {
       },
       boxShadow: {
         custom: '0px 3px 8px 0px rgba(0, 0, 0, 0.12)',
+        "back-to-top": "2px 4px 11.3px 0 rgba(0, 0, 0, 0.12)",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
