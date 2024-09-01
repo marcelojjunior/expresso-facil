@@ -26,7 +26,7 @@ const cardServices = [
 
 export default function OurServices() {
     return (
-        <div className="container mx-auto px-4 mb-20 flex flex-col gap-10">
+        <div className="container mx-auto px-4 mb-14 xl:mb-20 flex flex-col gap-10">
             <div className="flex flex-col items-center gap-4 text-blue-primary">
                 <h2 className="text-4xl xl:text-5xl font-bold">
                     Nossos Serviços
