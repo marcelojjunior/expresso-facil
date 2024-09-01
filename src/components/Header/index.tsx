@@ -6,7 +6,7 @@ import logoExpresso from '@/assets/images/expresso-logo.png';
 import Link from 'next/link';
 import { Drawer } from 'vaul';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { useEffect, useState } from 'react';
+import { MouseEvent, useEffect, useState } from 'react';
 import { IoCloseSharp } from 'react-icons/io5';
 
 export default function Header() {
@@ -26,21 +26,39 @@ export default function Header() {
         }
     }, [])
 
+    const handleLinkClick = (event: MouseEvent<HTMLAnchorElement>, targetId: string) => {
+        event.preventDefault();
+        setIsOpen(false);
+        const targetElement = document.querySelector(targetId);
+
+        const elementPosition = targetElement?.getBoundingClientRect().top;
+        const offsetPosition = elementPosition! - 10;
+        if (targetElement) {
+            setTimeout(() => {
+                window.scrollTo({ top: offsetPosition - 35, behavior: 'smooth' });
+            }, 500);
+        }
+    };
+
     return (
-        <header className='flex flex-col bg-yellow-primary'>
+        <header id='header' className='flex flex-col bg-yellow-primary'>
             <nav className='container mx-auto flex items-center justify-between py-2 px-4 relative'>
                 <Link href={'/'}>
                     <Image src={logoExpresso} alt="Logo" className='w-20' />
                 </Link>
                 <ul className='hidden lg:flex items-center gap-10'>
                     <li className='text-blue-primary font-medium text-lg hover:opacity-80'>
-                        Serviços
+                        <Link href={'#ourServices'}>
+                            Serviços
+                        </Link>
+                    </li>
+                    <li className='text-blue-primary font-medium text-lg hover:opacity-80'>
+                        <Link href={'#contactUs'}>
+                            Contato
+                        </Link>
                     </li>
                     <li className='text-blue-primary font-medium text-lg hover:opacity-80'>
                         Perguntas Frequentes
-                    </li>
-                    <li className='text-blue-primary font-medium text-lg hover:opacity-80'>
-                        Contato
                     </li>
                 </ul>
                 <div className='lg:hidden'>
@@ -82,13 +100,17 @@ export default function Header() {
                                     </div>
                                     <ul className='flex flex-col gap-5 mt-6'>
                                         <li className='text-blue-primary font-medium text-lg hover:opacity-80'>
-                                            Serviços
+                                            <Link href={'#ourServices'} onClick={(e) => handleLinkClick(e, '#ourServices')}>
+                                                Serviços
+                                            </Link>
+                                        </li>
+                                        <li className='text-blue-primary font-medium text-lg hover:opacity-80'>
+                                            <Link href={'#contactUs'} onClick={(e) => handleLinkClick(e, '#contactUs')}>
+                                                Contato
+                                            </Link>
                                         </li>
                                         <li className='text-blue-primary font-medium text-lg hover:opacity-80'>
                                             Perguntas Frequentes
-                                        </li>
-                                        <li className='text-blue-primary font-medium text-lg hover:opacity-80'>
-                                            Contato
                                         </li>
                                     </ul>
                                 </nav>

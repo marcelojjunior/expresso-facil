@@ -5,7 +5,7 @@ import Map from "../Map";
 
 export default function ContactUs() {
     return (
-        <div className="container mx-auto xl:px-4 flex flex-col gap-8 xl:gap-20 mb-10">
+        <div id="contactUs" className="container mx-auto xl:px-4 flex flex-col gap-8 xl:gap-20 mb-10">
             <div className="flex flex-col items-center gap-4 text-blue-primary max-xl:px-4">
                 <h2 className="text-4xl xl:text-5xl font-bold text-center">
                     Entre em Contato
@@ -45,7 +45,9 @@ export default function ContactUs() {
                             </div>
                             <div className="flex flex-col text-blue-primary">
                                 <p className="text-base font-semibold">Telefone</p>
-                                <span className="text-lg">(99) 98826-4855</span>
+                                <Link href="https://api.whatsapp.com/send?phone=5599988264855" className="text-lg">
+                                    (99) 98826-4855
+                                </Link>
                             </div>
                         </div>
                         <div className="flex flex-col gap-2">
