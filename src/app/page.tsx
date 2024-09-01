@@ -1,6 +1,7 @@
 'use client';
 
 import BlockSolutions from "@/components/BlockSolutions";
+import ContactUs from "@/components/ContactUs";
 import Hero from "@/components/Hero";
 import OurServices from "@/components/OurServices";
 import TabsServicesCard from "@/components/TabsServicesCard";
@@ -27,6 +28,7 @@ export default function Home() {
       </div>
       <OurServices />
       <BlockSolutions />
+      <ContactUs />
     </div>
   );
 }

@@ -2,10 +2,11 @@
 import imageBlock from "@/assets/images/receive-orders.jpg";
 import imageSendOrder from "@/assets/images/send-orders.jpg";
 import Image from "next/image";
+import Button from "../Button";
 
 export default function BlockSolutions() {
     return (
-        <div className="container mx-auto xl:px-4 flex flex-col gap-8 xl:gap-20 mb-10">
+        <div className="container mx-auto xl:px-4 flex flex-col gap-8 xl:gap-20 mb-14 xl:mb-20">
             <div className="flex flex-col items-center gap-4 text-blue-primary max-xl:px-4">
                 <h2 className="text-4xl xl:text-5xl font-bold text-center">
                     Serviços que Facilitam o Seu Dia a Dia
@@ -22,6 +23,14 @@ export default function BlockSolutions() {
                             suas encomendas com segurança e total comodidade. Garantimos o armazenamento adequado
                             e você pode retirar no melhor horário para você.
                         </p>
+                        <div className="mt-2 w-full xl:w-44">
+                            <Button
+                                asLink
+                                linkProps={{ href: 'https://api.whatsapp.com/send?phone=5599988264855', target: '_blank' }}
+                            >
+                                Contato
+                            </Button>
+                        </div>
                     </div>
                 </div>
                 <Image
@@ -37,6 +46,7 @@ export default function BlockSolutions() {
                     src={imageSendOrder}
                     alt="Recebemos suas encomendas"
                     className="w-full h-64 md:h-96 object-cover"
+                    priority
                     width={500}
                     height={500}
                 />
@@ -46,10 +56,18 @@ export default function BlockSolutions() {
                             Envie Suas Encomendas com Tranquilidade e Confiança!
                         </h3>
                         <p className="w-full text-base xl:text-lg">
-                            Na Expresso Fácil, você pode contar com a postagem ágil e eficiente das suas encomendas. 
-                            Cuidamos de todo o processo de envio para garantir que seus pacotes cheguem ao destino no 
+                            Na Expresso Fácil, você pode contar com a postagem ágil e eficiente das suas encomendas.
+                            Cuidamos de todo o processo de envio para garantir que seus pacotes cheguem ao destino no
                             menor tempo possível e com total segurança.
                         </p>
+                        <div className="mt-2 w-full xl:w-44">
+                            <Button
+                                asLink
+                                linkProps={{ href: 'https://api.whatsapp.com/send?phone=5599988264855', target: '_blank' }}
+                            >
+                                Contato
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </div>

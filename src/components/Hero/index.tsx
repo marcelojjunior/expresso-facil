@@ -17,7 +17,7 @@ export default function Hero() {
             </p>
           </div>
           <div className="w-full max-xl:hidden">
-            <div className="w-[90%]">
+            <div className="w-[90%] xl:min-h-[550px]">
               <Lottie animationData={lottieAnimation} loop />
             </div>
           </div>
