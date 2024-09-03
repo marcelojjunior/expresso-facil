@@ -5,7 +5,7 @@ import Map from "../Map";
 
 export default function ContactUs() {
     return (
-        <div id="contactUs" className="container mx-auto xl:px-4 flex flex-col gap-8 xl:gap-20 mb-10">
+        <div id="contactUs" className="container mx-auto xl:px-4 flex flex-col gap-8 xl:gap-20 mb-14 xl:mb-20">
             <div className="flex flex-col items-center gap-4 text-blue-primary max-xl:px-4">
                 <h2 className="text-4xl xl:text-5xl font-bold text-center">
                     Entre em Contato

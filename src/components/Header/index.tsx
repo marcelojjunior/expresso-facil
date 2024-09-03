@@ -58,7 +58,14 @@ export default function Header() {
                         </Link>
                     </li>
                     <li className='text-blue-primary font-medium text-lg hover:opacity-80'>
+                        <Link href={'#testimonials'}>
+                            Depoimentos
+                        </Link>
+                    </li>
+                    <li className='text-blue-primary font-medium text-lg hover:opacity-80'>
+                        <Link href={'#faq'}>
                         Perguntas Frequentes
+                        </Link>
                     </li>
                 </ul>
                 <div className='lg:hidden'>
@@ -110,7 +117,14 @@ export default function Header() {
                                             </Link>
                                         </li>
                                         <li className='text-blue-primary font-medium text-lg hover:opacity-80'>
-                                            Perguntas Frequentes
+                                            <Link href={'#testimonials'} onClick={(e) => handleLinkClick(e, '#testimonials')}>
+                                                Depoimentos
+                                            </Link>
+                                        </li>
+                                        <li className='text-blue-primary font-medium text-lg hover:opacity-80'>
+                                            <Link href={'#faq'} onClick={(e) => handleLinkClick(e, '#faq')}>
+                                                Perguntas Frequentes
+                                            </Link>
                                         </li>
                                     </ul>
                                 </nav>
