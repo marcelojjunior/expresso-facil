@@ -3,6 +3,7 @@
 import BlockSolutions from "@/components/BlockSolutions";
 import ContactUs from "@/components/ContactUs";
 import Faq from "@/components/Faq";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import OurServices from "@/components/OurServices";
 import TabsServicesCard from "@/components/TabsServicesCard";
@@ -66,6 +67,8 @@ export default function Home() {
       <ContactUs />
       <Testimonials />
       <Faq />
+
+      <Footer />
 
       <Link
         href="#header"
