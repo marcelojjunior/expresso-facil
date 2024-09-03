@@ -2,9 +2,11 @@
 
 import BlockSolutions from "@/components/BlockSolutions";
 import ContactUs from "@/components/ContactUs";
+import Faq from "@/components/Faq";
 import Hero from "@/components/Hero";
 import OurServices from "@/components/OurServices";
 import TabsServicesCard from "@/components/TabsServicesCard";
+import Testimonials from "@/components/Testimonials";
 import Link from "next/link";
 import { useEffect } from "react";
 import { IoArrowUp } from "react-icons/io5";
@@ -62,6 +64,8 @@ export default function Home() {
       <OurServices />
       <BlockSolutions />
       <ContactUs />
+      <Testimonials />
+      <Faq />
 
       <Link
         href="#header"
