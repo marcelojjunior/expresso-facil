@@ -1,9 +1,10 @@
 import React, { HtmlHTMLAttributes } from 'react'
+import { CiLocationOn } from 'react-icons/ci';
 
 export interface StepProps extends HtmlHTMLAttributes<HTMLLIElement> {
     status?: string;
     date?: string;
-    description?: string;
+    description?: string | React.ReactNode;
     location?: string;
     icon?: React.ReactNode;
     isFirst?: boolean;
@@ -27,19 +28,19 @@ export default function Steps({
                 <div className='bg-yellow-primary shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-dark-primary'>
                     {icon}
                 </div>
-                <div className='ml-5 flex flex-col mt-2 w-full text-white'>
+                <div className='ml-5 flex flex-col mt-2 w-full text-blue-primary'>
                     <span className='text-sm font-medium text-gray-400'>
                         {date}
                     </span>
-                    <div className='mt-2 text-sm flex flex-col'>
+                    <div className='mt-2 text-sm flex flex-col gap-1'>
                         <p className='font-bold'>
                             {status}
                         </p>
-                        <span>
+                        <span className='break-all whitespace-break-spaces'>
                             {description}
                         </span>
-                        <span>
-                            {location}
+                        <span className='flex items-center gap-1'>
+                            <CiLocationOn size={20} /> {location}
                         </span>
                     </div>
                 </div>

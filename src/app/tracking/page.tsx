@@ -19,7 +19,7 @@ export default function Tracking() {
   // const codeExample = "NM275679471BR";
 
   function handleGetTracking(code: string) {
-    getTracking(code, token?.token || "");
+    // getTracking(code, token?.token || "");
   }
 
   // useEffect(() => {

@@ -4,11 +4,13 @@ import { twMerge } from "tailwind-merge";
 
 export interface ButtonProps extends HtmlHTMLAttributes<HTMLButtonElement> {
     asLink?: boolean;
+    loading?: boolean
     linkProps?: DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>
 }
 
 export default function Button({
     asLink = false,
+    loading = false,
     linkProps = { href: '' },
     children,
     className,
@@ -34,10 +36,12 @@ export default function Button({
     } else {
         return (
             <button
+                disabled={loading}
                 {...props}
                 className={twMerge(
+                    "disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-yellow-primary disabled:hover:text-blue-primary",
                     defaultClassNames,
-                    className
+                    className,
                 )}
             >
                 {children}
