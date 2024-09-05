@@ -3,20 +3,8 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 export interface TokenProps {
-  ambiente: string;
-  id: string;
-  ip: string;
-  perfil: string;
-  cnpj: string;
-  cartaoPostagem: {
-    numero: string;
-    contrato: string;
-    dr: string;
-    api: number[];
-  };
   emissao: string;
   expiraEm: string;
-  zoneOffset: string;
   token: string;
 }
 
@@ -37,6 +25,7 @@ interface EventsProps {
       uf: string;
     };
     tipo: string;
+    nome: string;
   }
 }
 
@@ -56,6 +45,7 @@ interface ObjectsProps {
     descricao: string;
     sigla: string;
   };
+  mensagem: string;
 }
 
 export interface TrackingProps {
@@ -66,12 +56,14 @@ export interface TrackingProps {
 }
 
 interface CorreiosProps {
-  token: TokenProps | null;
+  token: string | null;
+  expiresIn: string | null;
+  createdAt: string | null;
   tracking: TrackingProps;
   cep: string;
   setTracking: (tracking: TrackingProps) => void;
   getToken: () => void;
-  getTracking: (code: string, token: string) => void;
+  getTracking: (code: string, token: string) => Promise<void>;
   getCep: (code: string) => void;
 }
 
@@ -79,6 +71,8 @@ export const useCorreios = create(
   persist<CorreiosProps>(
     (set) => ({
       token: null,
+      expiresIn: null,
+      createdAt: null,
       tracking: {
         objetos: [],
         quantidade: 0,
@@ -91,7 +85,7 @@ export const useCorreios = create(
         try {
           const response = await api.post("/api/generate-token");
           const data = response.data;
-          set({ token: data });
+          set({ token: data.token, expiresIn: data.expiraEm, createdAt: data.emissao });
         } catch (error) {
           console.error("Error fetching tracking data:", error);
         }
@@ -108,7 +102,7 @@ export const useCorreios = create(
           const response = await api.get(`/api/tracking?code=${code}&token=${token}`);
           const data = response.data;
           set({ tracking: data });
-          return data;
+          return data.token;
         } catch (error) {
           console.error("Error fetching tracking data:", error);
         }

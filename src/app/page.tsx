@@ -11,19 +11,17 @@ import Testimonials from "@/components/Testimonials";
 import Link from "next/link";
 import { useEffect } from "react";
 import { IoArrowUp } from "react-icons/io5";
-// import TrackingCard from "@/components/TrackingCard";
-// import { useCorreios } from "@/hook/useCorreios";
-// import { useEffect } from "react";
+import { useCorreios } from "@/hook/useCorreios";
 
 export default function Home() {
-  // const { getToken, tracking, token } = useCorreios();
+  const { getToken, expiresIn } = useCorreios();
 
-  // useEffect(() => {
-  //   const daNow = new Date();
-  //   if (token!.expiraEm < daNow.toISOString()) {
-  //     getToken();
-  //   }
-  // }, [])
+  useEffect(() => {
+    const dateNow = new Date();
+    if (expiresIn! < dateNow.toISOString()) {
+      getToken();
+    }
+  }, [])
 
   useEffect(() => {
     const backToTopButton = document.getElementById('backToTop')
@@ -57,7 +55,6 @@ export default function Home() {
 
   return (
     <div className="">
-      {/* <TrackingCard /> */}
       <Hero />
       <div className="container mx-auto -mt-16 xl:-mt-28 mb-14 xl:mb-20 px-4">
         <TabsServicesCard />
