@@ -18,6 +18,10 @@ export default function Home() {
 
   useEffect(() => {
     const dateNow = new Date();
+    if(!expiresIn) {
+      getToken();
+    }
+
     if (expiresIn! < dateNow.toISOString()) {
       getToken();
     }
