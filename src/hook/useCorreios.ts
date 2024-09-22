@@ -48,6 +48,22 @@ interface ObjectsProps {
   mensagem: string;
 }
 
+export interface StateProps {
+  id: number;
+  nome: string;
+  regiao: {
+    id: number;
+    nome: string;
+    sigla: string;
+  }
+  sigla: string;
+}
+
+export interface CityProps {
+  nome: string;
+  codigo_ibge: string;
+}
+
 export interface TrackingProps {
   objetos: ObjectsProps[];
   quantidade: number;
@@ -55,16 +71,34 @@ export interface TrackingProps {
   versao: string;
 }
 
+export interface CepProps {
+  cep: string;
+  logradouro: string;
+  complemento: string;
+  unidade: string;
+  bairro: string;
+  localidade: string;
+  uf: string;
+  estado: string;
+  regiao: string;
+  ddd: string;
+}
+
 interface CorreiosProps {
   token: string | null;
   expiresIn: string | null;
   createdAt: string | null;
   tracking: TrackingProps;
-  cep: string;
+  searched: string;
+  cep: CepProps[] | [];
+  setSearched: (searched: string) => void;
+  setCep: (cep: CepProps[]) => void;
   setTracking: (tracking: TrackingProps) => void;
   getToken: () => void;
   getTracking: (code: string, token: string) => Promise<void>;
-  getCep: (code: string) => void;
+  getCep: (state: string, city: string, address: string) => Promise<CepProps[]>;
+  getStates: () => Promise<StateProps[]>;
+  getCities: (code: string) => Promise<CityProps[]>;
 }
 
 export const useCorreios = create(
@@ -79,7 +113,10 @@ export const useCorreios = create(
         tipoResultado: "",
         versao: "",
       },
-      cep: "",
+      searched: "",
+      cep: [],
+      setSearched: (searched) => set({ searched }),
+      setCep: (cep) => set({ cep }),
       setTracking: (tracking) => set({ tracking }),
       getToken: async () => {
         try {
@@ -90,12 +127,15 @@ export const useCorreios = create(
           console.error("Error fetching tracking data:", error);
         }
       },
-      getCep: async (code: string) => {
-        const response = await api.get(
-          `https://viacep.com.br/ws/${code}/json/`
-        );
-        const data = response.data;
-        set({ tracking: data });
+      getCep: async (state: string, city: string, address: string) => {
+        try {
+          const { data } = await api.get(
+            `https://viacep.com.br/ws/${state}/${city}/${address}/json/`
+          );
+          return data;
+        } catch (error) {
+          console.error("Error fetching tracking data:", error);
+        }
       },
       getTracking: async (code: string, token: string) => {
         try {
@@ -106,6 +146,14 @@ export const useCorreios = create(
         } catch (error) {
           console.error("Error fetching tracking data:", error);
         }
+      },
+      getStates: async () => {
+        const { data } = await api.get("https://brasilapi.com.br/api/ibge/uf/v1");
+        return data;
+      },
+      getCities: async (code: string) => {
+        const { data } = await api.get(`https://brasilapi.com.br/api/ibge/municipios/v1/${code}`);
+        return data;
       },
     }),
     {

@@ -20,6 +20,7 @@ export default function Tracking() {
     const trackingRef = useRef<HTMLDivElement>(null);
     // const codeExample = "NM281138121BR";
     function handleGetTracking(code: string) {
+        if(code === "") return
         setLoading(true)
         getTracking(code, token! || "").then(() => {
             setLoading(false)

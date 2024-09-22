@@ -15,11 +15,11 @@ interface TabProps {
 }
 
 const tabs: TabProps[] = [
-    {
-        id: 1,
-        key: 'shipping',
-        name: 'Calcular Frete'
-    },
+    // {
+    //     id: 1,
+    //     key: 'shipping',
+    //     name: 'Calcular Frete'
+    // },
     {
         id: 2,
         key: 'tracking',
@@ -33,7 +33,7 @@ const tabs: TabProps[] = [
 ]
 
 export default function TabsServicesCard({ }: TabsServicesCardProps) {
-    const [activeTab, setActiveTab] = useState<'shipping' | 'tracking' | 'cep'>("shipping");
+    const [activeTab, setActiveTab] = useState<'shipping' | 'tracking' | 'cep'>("cep");
 
     return (
         <div className="flex flex-col">
@@ -49,7 +49,7 @@ export default function TabsServicesCard({ }: TabsServicesCardProps) {
                 ))}
             </div>
             <div className="bg-white shadow-custom py-4 lg:py-6 px-4 lg:px-8">
-                {activeTab === 'shipping' && <Shipping />}
+                {/* {activeTab === 'shipping' && <Shipping />} */}
                 {activeTab === 'tracking' && <Tracking />}
                 {activeTab === 'cep' && <Cep />}
             </div>
