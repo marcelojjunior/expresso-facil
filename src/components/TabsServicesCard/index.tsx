@@ -33,7 +33,7 @@ const tabs: TabProps[] = [
 ]
 
 export default function TabsServicesCard({ }: TabsServicesCardProps) {
-    const [activeTab, setActiveTab] = useState<'shipping' | 'tracking' | 'cep'>("cep");
+    const [activeTab, setActiveTab] = useState<'shipping' | 'tracking' | 'cep'>("tracking");
 
     return (
         <div className="flex flex-col">
