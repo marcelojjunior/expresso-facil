@@ -25,3 +25,22 @@ body {
     text-wrap: balance;
   }
 }
+
+.rs-picker-toggle {
+  @apply h-full flex items-center;
+}
+
+.rs-stack {
+  @apply h-full;
+}
+
+.rs-picker-default
+  .rs-picker-toggle.rs-btn
+  .rs-picker-toggle-indicator
+  .rs-picker-caret-icon,
+.rs-picker-default
+  .rs-picker-toggle.rs-btn
+  .rs-picker-toggle-indicator
+  .rs-picker-clean {
+    @apply !top-[14px];
+}
