@@ -1,7 +1,7 @@
 import InputText from "../../InputText";
 import { CiLocationOn } from "react-icons/ci";
 import Button from "../../Button";
-import { CepProps, CityProps, StateProps, useCorreios } from "@/hook/useCorreios";
+import { CityProps, StateProps, useCorreios } from "@/hook/useCorreios";
 import { useEffect, useMemo, useState } from "react";
 import { SelectPicker } from "rsuite";
 import 'rsuite/SelectPicker/styles/index.css';
